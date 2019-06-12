@@ -52,6 +52,7 @@ export default new Vuex.Store({
           })
           .catch(err => {
             commit("auth_error");
+            // eslint-disable-next-line
             console.log("errors", err.response.data.message);
             localStorage.removeItem("token");
             reject(err.response.data.message);
@@ -82,6 +83,7 @@ export default new Vuex.Store({
       });
     },
     logout({ commit }) {
+      // eslint-disable-next-line
       return new Promise((resolve, reject) => {
         commit("logout");
         localStorage.removeItem("token");
